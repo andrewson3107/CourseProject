@@ -1,3 +1,8 @@
-# CourseProject
+# CS410 Final Project: Chrome Extension
 
-Please fork this repository and paste the github link of your fork on Microsoft CMT. Detailed instructions are on Coursera under Week 1: Course Project Overview/Week 9 Activities.
+## Team Members:
+#### Andrew Son: andrew28@illinois.edu
+#### Sujay Nanjannavar: sujaypn2@illinois.edu
+
+
+
