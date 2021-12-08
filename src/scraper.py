@@ -90,8 +90,8 @@ descriptions = []
 urls = []
 
 def write_to_file():
-	f = open('../data/application_links.txt', 'w', encoding='utf-8')
-	j = open('../data/scraped_text.txt', 'w', encoding='utf-8')
+	f = open('../data/raw/application_links.txt', 'w', encoding='utf-8')
+	j = open('../data/raw/scraped_text.txt', 'w', encoding='utf-8')
 
 	for i in range(len(titles)):
 		f.write(f'{titles[i]} -> {urls[i]}')
