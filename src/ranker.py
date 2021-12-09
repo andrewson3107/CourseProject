@@ -28,9 +28,6 @@ f.close()
 
 ranked_links = [links[i] for i in ranked_docs]
 
-for link in ranked_links:
-    print(link)
-
 f = open('../data/ranked/documents.txt', 'w', encoding='utf-8')
 for link in ranked_links:
     f.write(f'{link}')
