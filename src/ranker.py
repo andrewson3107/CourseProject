@@ -9,6 +9,7 @@ def read_documents():
     f.close()
 
     return documents
+    
 
 def rank_documents(documents, query):
     corpus = [doc.split() for doc in documents]
@@ -18,6 +19,7 @@ def rank_documents(documents, query):
     ranked_docs = sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)
 
     return ranked_docs 
+
 
 def read_links():
     links = []
@@ -32,7 +34,7 @@ def read_links():
 
 def write_ranking(ranked_docs, links):
     ranked_links = [links[i] for i in ranked_docs]
-    f = open('../data/ranked/documents.txt', 'w', encoding='utf-8')
+    f = open('../data/ranked/links.txt', 'w', encoding='utf-8')
     for link in ranked_links:
         f.write(f'{link}')
     f.close()
@@ -49,6 +51,7 @@ print("Initializing application links from text file complete.")
 
 ranked_docs = rank_documents(documents,query)
 print("Ranking complete.")
+print("Rank by zero-index:", ranked_docs)
 
 write_ranking(ranked_docs, links)
-print("Ranking written to file located at ../data/ranked/documents.txt.")
+print("Ranking written to file located at ../data/ranked/links.txt.")
