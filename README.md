@@ -26,6 +26,7 @@ Formats the raw data outputted from `scraper.py` with the following criteria:
 
 `ranker.py`
 
+Defines a function accepts a list of documents and a query that returns a sorted list of indexes of the documents based on the ranking. Using that function, ranks the formatted documents in `data/formatted/documents.txt` based off a query term and outputs the sorted list of indexes. Using the raw list of application links, the ranked list of application links is created using the sorted list of indexes at `data/ranked/ranked_application_links.txt`.
 
 # Setup:
 The following dependencies are required:
