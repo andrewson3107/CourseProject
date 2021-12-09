@@ -6,6 +6,7 @@ titles = []
 descriptions = []
 urls = []
 
+# Writes the scraped data to a txt file and also writes the company name and link to application to another txt file.
 def write_to_file():
 	f = open('../data/raw/application_links.txt', 'w', encoding='utf-8')
 	j = open('../data/raw/scraped_text.txt', 'w', encoding='utf-8')
@@ -19,6 +20,7 @@ def write_to_file():
 	f.close()
 	j.close()
 
+# Opens the provided url to the application posting and scrapes all descriptive text. 
 def scrape_posting(wd, url):
 	wd.get(url)
 	time.sleep(5)
@@ -37,6 +39,7 @@ def scrape_posting(wd, url):
 	descriptions.append(description.text.strip())
 	urls.append(url)
 
+# Crawls through each posting on the sidebar of the job postings page.
 def crawl_sidebar(wd):
 	html = wd.execute_script('return document.body.innerHTML')
 	bs = BeautifulSoup(html, 'html.parser')
@@ -54,7 +57,7 @@ def crawl_sidebar(wd):
 	
 	print('Scraping Complete.')
 
-
+# This url can be modified for any type of query on LinkedIn.com/jobs
 website_url = "https://www.linkedin.com/jobs/search?keywords=software%20engineering&location=&geoId=&trk=homepage-jobseeker_jobs-search-bar_search-submit&position=1&pageNum=0"
 wd = webdriver.Chrome(executable_path='../Drivers/chromedriver.exe')
 wd.get(website_url)
