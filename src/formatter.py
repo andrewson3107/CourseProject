@@ -10,7 +10,7 @@ def lower_case(document):
     document = document.lower()
     return document.lower()
 
-
+# https://stackoverflow.com/questions/11331982/how-to-remove-any-url-within-a-string-in-python/11332580
 def remove_links(document):
     document = re.sub(r'^https?:\/\/.*[\r\n]*', '', document, flags=re.MULTILINE)
     return document
@@ -25,7 +25,7 @@ def remove_short_words(document):
     document = re.sub(r'\b\w{1,2}\b', '', document)
     return document
 
-
+# https://stackoverflow.com/questions/1546226/is-there-a-simple-way-to-remove-multiple-spaces-in-a-string
 def correct_spaces(document):
     document = re.sub(' +', ' ', document)
     return document
