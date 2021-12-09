@@ -9,7 +9,7 @@ def read_documents():
     f.close()
 
     return documents
-    
+
 
 def rank_documents(documents, query):
     corpus = [doc.split() for doc in documents]
@@ -40,18 +40,24 @@ def write_ranking(ranked_docs, links):
     f.close()
     
 ##########################################################
-# This variable can be modified to any query
-query = "Experience with SQL databases"
 
-documents = read_documents()
-print("Initializing documents from text file complete.")
+def main():
+    # This variable can be modified to any query
+    query = "Experience with SQL databases"
 
-links = read_links()
-print("Initializing application links from text file complete.")
+    documents = read_documents()
+    print("Initializing documents from text file complete.")
 
-ranked_docs = rank_documents(documents,query)
-print("Ranking complete.")
-print("Rank by zero-index:", ranked_docs)
+    links = read_links()
+    print("Initializing application links from text file complete.")
 
-write_ranking(ranked_docs, links)
-print("Ranking written to file located at ../data/ranked/links.txt.")
+    ranked_docs = rank_documents(documents,query)
+    print("Ranking complete.")
+    print("Rank by zero-index:", ranked_docs)
+
+    write_ranking(ranked_docs, links)
+    print("Ranking written to file located at ../data/ranked/links.txt.")
+
+
+if __name__ == "__main__":
+	main()

@@ -59,14 +59,16 @@ def crawl_sidebar(wd):
 	
 	print('Scraping Complete.')
 
-# This url can be modified for any type of query on LinkedIn.com/jobs
-website_url = "https://www.linkedin.com/jobs/search?keywords=software%20engineering&location=&geoId=&trk=homepage-jobseeker_jobs-search-bar_search-submit&position=1&pageNum=0"
-wd = webdriver.Chrome(executable_path='../Drivers/chromedriver.exe')
-wd.get(website_url)
+def main():
+	# This url can be modified for any type of query on LinkedIn.com/jobs
+	website_url = "https://www.linkedin.com/jobs/search?keywords=software%20engineering&location=&geoId=&trk=homepage-jobseeker_jobs-search-bar_search-submit&position=1&pageNum=0"
+	wd = webdriver.Chrome(executable_path='../Drivers/chromedriver.exe')
+	wd.get(website_url)
 
-crawl_sidebar(wd)
-write_to_file()
-wd.close()
+	crawl_sidebar(wd)
+	write_to_file()
+	wd.close()
 
-
+if __name__ == "__main__":
+	main()
 

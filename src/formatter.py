@@ -51,17 +51,21 @@ def read_documents():
     return documents
 
 ######################################################################
-documents = read_documents()
+def main():
+    documents = read_documents()
 
-i = 0
-for document in documents:
-    document = lower_case(document)
-    document = remove_links(document)
-    document = remove_non_alpha(document)
-    # document = remove_short_words(document)
-    document = correct_spaces(document)
-    documents[i] = document
-    i += 1
+    i = 0
+    for document in documents:
+        document = lower_case(document)
+        document = remove_links(document)
+        document = remove_non_alpha(document)
+        # document = remove_short_words(document)
+        document = correct_spaces(document)
+        documents[i] = document
+        i += 1
 
-write_to_file(documents)
-print("Formatting complete. File written to ../formatted/documents.txt.")
+    write_to_file(documents)
+    print("Formatting complete. File written to ../formatted/documents.txt.")
+
+if __name__ == "__main__":
+	main()
