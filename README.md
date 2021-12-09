@@ -79,7 +79,13 @@ To execute the program with the provided frontend:
 - Navigate to http://127.0.0.1:5000/ on a browser
 - Enter a query in the text box and hit search
 
+# Evaluation:
+To evaluate the accuracy and effectiveness of our program, a sample dataset of 25 job postings was scraped and formatted. Additional details and the results of the evaluation can be found in `evaluation.md`.
+
 # Contributions:
 Andrew28:
 - `scraper.py`
 - `formatter.py`
+
+Sujaypn2:
+`
