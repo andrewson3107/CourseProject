@@ -8,7 +8,7 @@ urls = []
 
 # Writes the scraped data to a txt file and also writes the company name and link to application to another txt file.
 def write_to_file():
-	f = open('../data/raw/application_links.txt', 'w', encoding='utf-8')
+	f = open('../data/formatted/application_links.txt', 'w', encoding='utf-8')
 	j = open('../data/raw/scraped_text.txt', 'w', encoding='utf-8')
 
 	for i in range(len(titles)):
@@ -50,6 +50,8 @@ def crawl_sidebar(wd):
 
 	listings = sidebar.find_all('li')
 	for listing in listings:
+		if not listing.div.a:
+			continue
 		url = listing.div.a['href']
 		scrape_posting(wd, url)
 		print(f'Scraping in progress...    {i}/{len(listings)}')

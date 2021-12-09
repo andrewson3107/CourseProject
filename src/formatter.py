@@ -64,3 +64,4 @@ for document in documents:
     i += 1
 
 write_to_file(documents)
+print("Formatting complete. File written to ../formatted/documents.txt.")
