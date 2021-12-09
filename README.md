@@ -30,9 +30,9 @@ Defines a function accepts a list of documents and a query that returns a sorted
 
 # Setup:
 The following dependencies are required:
-- Python 3.9
+- Python 3.8
 - Selenium
-- BeautifulSoup
+- beautifulsoup4
 - gensim 3.8.3
 
 In order to install Gensim, Microsoft Visual C++ 14.0 or greater is required. It can be downloaded from the link provided below.
