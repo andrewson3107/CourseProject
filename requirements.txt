@@ -1,2 +1,3 @@
 selenium
 bs4
+gensim==3.8.3
