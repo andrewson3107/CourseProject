@@ -1,4 +1,5 @@
 from gensim.summarization.bm25 import BM25
+import sys
 
 def read_documents():
     documents = []
@@ -41,8 +42,11 @@ def write_ranking(ranked_docs, links):
     
 ##########################################################
 
-def main(query="Experience with SQL databases"):
+def main():
     # This variable can be modified to any query
+    query = sys.argv[1]
+    print("Inputted query:", query)
+
     documents = read_documents()
     print("Initializing documents from text file complete.")
 

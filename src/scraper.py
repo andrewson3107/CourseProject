@@ -1,6 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import time
+import sys
 
 titles = []
 descriptions = []
@@ -60,13 +61,14 @@ def crawl_sidebar(wd):
 	print('Scraping Complete.')
 
 def main():
-	# This url can be modified for any type of query on LinkedIn.com/jobs
-	website_url = "https://www.linkedin.com/jobs/search?keywords=software%20engineering&location=&geoId=&trk=homepage-jobseeker_jobs-search-bar_search-submit&position=1&pageNum=0"
+	# This url can be modified for any type of query on LinkedIn.com/jobs via this variable, or be passed in via command line arguments
+	# website_url = "https://www.linkedin.com/jobs/search?keywords=software%20engineering&location=&geoId=&trk=homepage-jobseeker_jobs-search-bar_search-submit&position=1&pageNum=0"
+	website_url = sys.argv[1]
 	wd = webdriver.Chrome(executable_path='../Drivers/chromedriver.exe')
 	wd.get(website_url)
 
 	crawl_sidebar(wd)
-	write_to_file()
+	# write_to_file()
 	wd.close()
 
 if __name__ == "__main__":
