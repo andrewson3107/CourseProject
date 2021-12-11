@@ -8,7 +8,7 @@
 
     <title>CS410: Job Postings Ranker</title>
     <script>
-      function sendPOST() {
+      function sendPOST_rank() {
         let query = { query: $("#query").val() }
 
         $.post("/rank", query)
@@ -31,6 +31,12 @@
           $("#content").html(`<hr><h3>Error - ${data.status}</h3><pre>${JSON.stringify(data, null, 2)}</pre>`);
         })
       };
+
+      function sendPOST_scrape() {
+        let scraping_query = { scraping_query: $("#scraping_query").val() }
+
+        $.post("/scrape")
+      }
       </script>
     <style>
       .container {
@@ -47,9 +53,20 @@
         font-weight: bold;
         font-size: 20px;
       }
+      
+      .rankRow {
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 5.7px;
+      }
 
       .searchbar {
-        width: 85%;
+        width: 75%;
+        border-radius: 4px;
+      }
+
+      .scrape_searchbar {
+        width: 75.5%;
         border-radius: 4px;
       }
 
@@ -76,10 +93,16 @@
   <body style=background-color:rgb(192,204,203)></body>
     <main class="container">
       <h1>LinkedIn Job Posting Ranker</h1>
+      <div class="rankRow">
+        Scraping Query: 
+        <input type="text" class="scrape_searchbar" id="scraping_query" name="scraping_query" placeholder="Example: Software Engineer">
+        <button onclick="sendPOST_scrape();" class="rankBtn">Scrape</button>
+      </div>
+      <br>
       <div class="searchRow">
-        Query: 
+        Ranking Query: 
         <input type="text" class="searchbar" id="query" name="query" placeholder="Example: 2 years experience with SQL databases">
-        <button onclick="sendPOST();" class="rankBtn">Rank</button>
+        <button onclick="sendPOST_rank();" class="rankBtn">Rank</button>
       </div>
 
       <div class="tableContainer">

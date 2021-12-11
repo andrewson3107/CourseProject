@@ -22,3 +22,11 @@ def rank():
         output['ranking'].append({temp[0]: temp[1][:-1]})
 
     return output, 200
+
+
+@app.route("/scrape", methods=['POST'])
+def scrape():
+    scraping_query = request.form['scraping_query']
+    # os.system("py ../src/ranker.py")
+
+    return 200
