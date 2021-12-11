@@ -44,7 +44,7 @@ def write_ranking(ranked_docs, links):
 
 def main():
     # This variable can be modified to any query
-    query = sys.argv[1]
+    query = sys.argv[1].lower()
     print("Inputted query:", query)
 
     documents = read_documents()
