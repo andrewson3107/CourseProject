@@ -41,10 +41,8 @@ def write_ranking(ranked_docs, links):
     
 ##########################################################
 
-def main():
+def main(query="Experience with SQL databases"):
     # This variable can be modified to any query
-    query = "Experience with SQL databases"
-
     documents = read_documents()
     print("Initializing documents from text file complete.")
 

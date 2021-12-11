@@ -1,5 +1,5 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request
+import ranker as ranker
 app = Flask(__name__)
 
 
@@ -7,7 +7,9 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/rank/<query>", methods=['GET'])
-def rank(query):
-    query
-    return {}
+@app.route("/rank", methods=['POST'])
+def rank():
+    query = request.form['query']
+    ranker.main(query)
+    f = open('../data/ranked/links.txt', 'w', encoding='utf-8')
+    return f
