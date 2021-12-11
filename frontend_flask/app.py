@@ -11,6 +11,7 @@ def index():
 @app.route("/rank", methods=['POST'])
 def rank():
     query = request.form['query']
+    print(query)
 
     output = {'ranking': []}
     # os.system("py ../src/ranker.py")

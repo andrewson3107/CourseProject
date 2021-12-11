@@ -8,44 +8,49 @@
 
     <title>CS410: Job Postings Ranker</title>
     <script>
-    function sendPOST() {
-      let query = { query: $("#query").val() }
+      function sendPOST() {
+        let query = { query: $("#query").val() }
 
-      $.post("/rank", query)
-      .done(function (data) {
-        // $("#content").html(`<hr><h3>Result</h3><pre>${JSON.stringify(data, null, 2)}</pre>`);
-        const ranking = data['ranking']
-        for (var i = 0; i < ranking.length; i++) {
-          for (var key in ranking[i]) {
-            var row = $('<tr/>');
-            var name = key;
-            var link = "<a href=" + ranking[i][key] + ">Link</a>";
-            // console.log(name, link);
-            row.append($('<td/>').html(i+1));
-            row.append($('<td/>').html(name));
-            row.append($('<td/>').html(link));
-            $('#table').append(row)
+        $.post("/rank", query)
+        .done(function (data) {
+          const ranking = data['ranking']
+          for (var i = 0; i < ranking.length; i++) {
+            for (var key in ranking[i]) {
+              var row = $('<tr/>');
+              var name = key;
+              var link = "<a href=" + ranking[i][key] + ">Link</a>";
+              // console.log(name, link);
+              row.append($('<td/>').html(i+1));
+              row.append($('<td/>').html(name));
+              row.append($('<td/>').html(link));
+              $('#table').append(row)
+            }
           }
-        }
-      })
-      .fail(function (data) {
-        $("#content").html(`<hr><h3>Error - ${data.status}</h3><pre>${JSON.stringify(data, null, 2)}</pre>`);
-      })
-    };
-    </script>
+        })
+        .fail(function (data) {
+          $("#content").html(`<hr><h3>Error - ${data.status}</h3><pre>${JSON.stringify(data, null, 2)}</pre>`);
+        })
+      };
+      </script>
     <style>
       .container {
         padding-top: 20px;
         text-align: center;
-        align-items: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+
+      h1 {
+        padding-bottom: 50px;
       }
 
       .searchRow {
-
+        font-weight: bold;
+        font-size: 20px;
       }
 
       .searchbar {
-        width: 90%;
+        width: 85%;
+        border-radius: 4px;
       }
 
       .tableContainer {
@@ -54,13 +59,23 @@
 
       .table {
         text-align: center;
+        font-size: 18px;
+      }
+
+      .rankBtn {
+        background-color: darkgray;
+        border-radius: 4px;
+        transition-duration: 0.4s;
+      }
+
+      .rankBtn:hover {
+        background-color: gray;
       }
     </style>    
   </head>
-  <body>
+  <body style=background-color:rgb(192,204,203)></body>
     <main class="container">
-      <h1 align="center">LinkedIn Job Posting Ranker</h1>
-      <br><br>
+      <h1>LinkedIn Job Posting Ranker</h1>
       <div class="searchRow">
         Query: 
         <input type="text" class="searchbar" id="query" name="query" placeholder="Example: 2 years experience with SQL databases">
