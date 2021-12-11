@@ -1,10 +1,10 @@
 # **CS410 Final Project: Job Postings Scraper and Ranker**
 
 # Overview
+Our project is an application that allows the user to scrape job postings from LinkedIn and rank the postings based on a search query. This can be used to narrow down more specifics based on the text of a job description or the qualifications needed for the job. 
 
 
-
-# Implementation:
+# Backend Implementation:
 `scraper.py`
 
 Scrapes a variable number of job postings from a LinkedIn job posting page. Any job postings page can be used. The link used for this program can be found [here](https://www.linkedin.com/jobs/search?keywords=software%20engineering&location=&geoId=&trk=homepage-jobseeker_jobs-search-bar_search-submit&position=1&pageNum=0). 
@@ -28,12 +28,21 @@ Formats the raw data outputted from `scraper.py` with the following criteria:
 
 Defines a function accepts a list of documents and a query that returns a sorted list of indexes of the documents based on the ranking. Using that function, ranks the formatted documents in `data/formatted/documents.txt` based off a query term and outputs the sorted list of indexes. Using the raw list of application links, the ranked list of application links is created using the sorted list of indexes at `data/ranked/ranked_application_links.txt`.
 
+# Frontend Implementation:
+The frontend for this application is written with Flask. All of the files related to the frontend can be found in `frontend_flask/`.
+
+`frontend_flask/` contains the following:
+- `app.py`: Handles a `GET` request to the `rank` endpoint to allow for ranking. This passes in the parameter `query` containing the user inputted search query. The frontend runs the program by importing all `src/` files and running them individually before returning a json output of the ranked job postings. 
+- `templates/`: A directory containing HTML files that are used to dictate the appearance of the frontend. These are loaded onto the flask application in via `render_template` in `app.py` 
+
+
 # Setup:
 The following dependencies are required:
 - Python 3.8
 - Selenium
 - beautifulsoup4
 - gensim 3.8.3
+- flask
 
 In order to install Gensim, Microsoft Visual C++ 14.0 or greater is required. It can be downloaded from the link provided below.
 
@@ -54,7 +63,7 @@ https://chromedriver.chromium.org/downloads
 
 
 # Execution:
-To execute the entire program, the scripts must be ran in the following order. 
+To execute the entire program without the frontend, the scripts must be ran in the following order. 
 
 ```
 1. scraper.py
@@ -62,10 +71,21 @@ To execute the entire program, the scripts must be ran in the following order.
 3. ranker.py
 ```
 
-The final ranking of the program can be found under `data/ranking/ranking.txt`
+The final ranking of the program can be found under `data/ranking/ranking.txt`. Note: it is a zero-index ranking, so line 1 in the ranking will refer to document 0 in the collection.
 
+To execute the program with the provided frontend:
+- Navigate into `frontend_flask/`
+- Run `flask run` or `python -m flask run`
+- Navigate to http://127.0.0.1:5000/ on a browser
+- Enter a query in the text box and hit search
+
+# Evaluation:
+To evaluate the accuracy and effectiveness of our program, a sample dataset of 25 job postings was scraped and formatted. Additional details and the results of the evaluation can be found in `evaluation.md`.
 
 # Contributions:
 Andrew28:
 - `scraper.py`
 - `formatter.py`
+
+Sujaypn2:
+`
