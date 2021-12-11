@@ -27,5 +27,6 @@ def rank():
 def scrape():
     scraping_query = request.form['scraping_query']
     os.system(f"py ../src/scraper.py {scraping_query}")
+    os.system(f"py ../src/formatter.py")
 
     return 200
