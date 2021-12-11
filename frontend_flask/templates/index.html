@@ -21,7 +21,10 @@
             var name = key;
             var link = ranking[i][key];
             // console.log(name, link);
+            row.append($('<td/>').html(i+1));
             row.append($('<td/>').html(name));
+            row.append($('<td/>').html(link));
+            $('#table').append(row)
           }
         }
       })
@@ -31,24 +34,48 @@
     };
     </script>
     <style>
+      .container {
+        padding-top: 20px;
+        text-align: center;
+        align-items: center;
+      }
+
+      .searchRow {
+
+      }
+
+      .searchbar {
+        width: 90%;
+      }
+
+      .tableContainer {
+        padding-top: 30px;
+      }
+
+      .table {
+        text-align: center;
+      }
     </style>    
   </head>
   <body>
-    <div class="container">
-      <h1></span>BM25 SWE List Ranking</h1>
-
-      <div class="form-group row">
-        <label for="query" class="col-sm-2 col-form-label">Query:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="query" name="query" placeholder="Enter query here. Example: Experience with SQL databases">
-        </div>
+    <main class="container">
+      <h1 align="center">LinkedIn Job Posting Ranker</h1>
+      <br><br>
+      <div class="searchRow">
+        Query: 
+        <input type="text" class="searchbar" id="query" name="query" placeholder="Example: 2 years experience with SQL databases">
+        <button onclick="sendPOST();" class="rankBtn">Rank</button>
       </div>
 
-      <button onclick="sendPOST();" class="btn btn-secondary">Rank</button>
-
-      <div id="content">
+      <div class="tableContainer">
+        <table class="table" id="table" align="center" border="2px">
+          <tr>
+            <th>Rank</th>
+            <th>Company Name</th>
+            <th>Application Link</th>
+          </tr>
+        </table>
       </div>
-      <table id="table" align="center" border="1px"></table>
-    </div>
+    </main>
   </body>
 </html>
