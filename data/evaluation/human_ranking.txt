@@ -1,27 +1,3 @@
-count=1:
-FinSiteful -> https://www.linkedin.com/jobs/view/software-engineer-at-finsiteful-2834182323?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=tOUxRVXKs5to2o%2BoeOuSXA%3D%3D&position=3&pageNum=0&trk=public_jobs_jserp-result_search-card
-Ezoic -> https://www.linkedin.com/jobs/view/software-engineer-senior-to-junior-at-ezoic-2833673277?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=nwdoufqVcQ2bei6tQktoZw%3D%3D&position=15&pageNum=0&trk=public_jobs_jserp-result_search-card
-CareerPlug -> https://www.linkedin.com/jobs/view/software-engineer-at-careerplug-2833842246?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=BpmQlS4g6K8zWWHq8gdcmQ%3D%3D&position=17&pageNum=0&trk=public_jobs_jserp-result_search-card
-Centillionz -> https://www.linkedin.com/jobs/view/junior-java-developer-at-centillionz-2834062477?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=DCsDO8C%2FoNfxVN2TcDo6%2FA%3D%3D&position=22&pageNum=0&trk=public_jobs_jserp-result_search-card
-MWIDM Inc. -> https://www.linkedin.com/jobs/view/software-engineer-at-mwidm-inc-2834224655?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=dQqpBPyV2Xbvu%2BFHEr0uhg%3D%3D&position=24&pageNum=0&trk=public_jobs_jserp-result_search-card
-
-count=2:
-Credibly -> https://www.linkedin.com/jobs/view/junior-software-engineer-at-credibly-2834166104?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=dPo%2BYTeYtnkEmv5QQClgDQ%3D%3D&position=5&pageNum=0&trk=public_jobs_jserp-result_search-card
-Redan, LLC -> https://www.linkedin.com/jobs/view/junior-software-engineer-at-redan-llc-2834193688?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=EwBGCxrdxfc4gjEqQz0Gaw%3D%3D&position=6&pageNum=0&trk=public_jobs_jserp-result_search-card
-Nomic -> https://www.linkedin.com/jobs/view/software-engineer-intern-at-nomic-2834188091?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=9W%2FhXn%2BCrnV1yGZtV0wYQg%3D%3D&position=8&pageNum=0&trk=public_jobs_jserp-result_search-card
-Panalgo -> https://www.linkedin.com/jobs/view/software-engineer-at-panalgo-2834303362?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=JBb26dbkwP3dqRM9cvfFFg%3D%3D&position=12&pageNum=0&trk=public_jobs_jserp-result_search-card
-PRO Unlimited -> https://www.linkedin.com/jobs/view/software-engineer-at-pro-unlimited-2834255110?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=ivKa2nk6ZtCPkmAtlUzNZg%3D%3D&position=20&pageNum=0&trk=public_jobs_jserp-result_search-card
-
-count=3:
-Kona -> https://www.linkedin.com/jobs/view/software-engineer-at-kona-2834279142?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=bVeJtSIRz8cSL%2BuUNFnNlg%3D%3D&position=11&pageNum=0&trk=public_jobs_jserp-result_search-card
-Mobinity Global -> https://www.linkedin.com/jobs/view/software-engineer-intern-at-mobinity-global-2833716969?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=dMAvfoJZ412AaiG69SwKzA%3D%3D&position=21&pageNum=0&trk=public_jobs_jserp-result_search-card
-
-count=4:
-YepChat -> https://www.linkedin.com/jobs/view/junior-full-stack-engineer-at-yepchat-2833744489?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=sqFs93JUHtLo7fXG%2BqPddA%3D%3D&position=10&pageNum=0&trk=public_jobs_jserp-result_search-card
-
-count=5:
-ITConnectUS -> https://www.linkedin.com/jobs/view/python-developer-at-itconnectus-2834056850?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=C9AQnUd%2BzUN4U5F3sO2Wtg%3D%3D&position=16&pageNum=0&trk=public_jobs_jserp-result_search-card
-
 1. ITConnectUS -> https://www.linkedin.com/jobs/view/python-developer-at-itconnectus-2834056850?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=C9AQnUd%2BzUN4U5F3sO2Wtg%3D%3D&position=16&pageNum=0&trk=public_jobs_jserp-result_search-card
 2. YepChat -> https://www.linkedin.com/jobs/view/junior-full-stack-engineer-at-yepchat-2833744489?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=sqFs93JUHtLo7fXG%2BqPddA%3D%3D&position=10&pageNum=0&trk=public_jobs_jserp-result_search-card
 3. Mobinity Global -> https://www.linkedin.com/jobs/view/software-engineer-intern-at-mobinity-global-2833716969?refId=JikBTPYZ%2FjGbO43%2FIodbiw%3D%3D&trackingId=dMAvfoJZ412AaiG69SwKzA%3D%3D&position=21&pageNum=0&trk=public_jobs_jserp-result_search-card
