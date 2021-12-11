@@ -86,7 +86,14 @@ To evaluate the accuracy and effectiveness of our program, a sample dataset of 2
 
 # Contributions:
 Andrew28:
-- `scraper.py`
-- `formatter.py`
+- `scraper.py`: Used BeautifulSoup and Selenium, to crawl and scrape through LinkedIn job postings based off of search query
+- `formatter.py`: Formats the job descriptions to create documents for ranking by removing unnecessary text content
+- `index.html`: Set up formatting of ranked results to be displayed on the webpage
+- `README.md`: Implementation descriptions
+- Flask Setup
 
 Sujaypn2:
+- `ranker.py`: Implemented BM25 ranking using gensim.summarization
+- `human_ranking.txt`: Performed human ranking of the scraped LinkedIn links to be used for evaluation
+- `app.py` and `index.html`: Set up webpage for queries to be propagated to app.py
+
