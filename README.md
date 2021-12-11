@@ -32,9 +32,9 @@ Defines a function accepts a list of documents and a query that returns a sorted
 The frontend for this application is written with Flask. All of the files related to the frontend can be found in `frontend_flask/`.
 
 `frontend_flask/` contains the following:
-- `app.py`: Handles a `GET` request to the `rank` endpoint to allow for ranking. This passes in the parameter `query` containing the user inputted search query. The frontend runs the program by importing all `src/` files and running them individually before returning a json output of the ranked job postings. 
+- `app.py`: Handles a `POST` request to the `rank` endpoint to allow for ranking. This passes in the parameter `query` containing the user inputted search query. The frontend runs the program by importing all `src/` files and running them individually before returning a json output of the ranked job postings. Additionally handles a `POST` request to the `scrape` endpoint to allow for scraping. This passes in the parameter `url` which is the page to be scraped (must be a LinkedIn jobs posting page. See link above).
 - `templates/`: A directory containing HTML files that are used to dictate the appearance of the frontend. These are loaded onto the flask application in via `render_template` in `app.py` 
-
+- `index.html`: An HTML file for the frontend of the server. Contains two forms, one for the scraping link, and another for the ranking query. Each of these is accompanied by a respective button. Additionally, the page contains a table with 3 columns: Rank, Company Name, and Application Link. This table becomes populated after including a ranking query and pressing the rank button.
 
 # Setup:
 The following dependencies are required:
@@ -63,12 +63,12 @@ https://chromedriver.chromium.org/downloads
 
 
 # Execution:
-To execute the entire program without the frontend, the scripts must be ran in the following order. 
+To execute the entire program without the frontend, the scripts must be ran in the following order. Both `scraper.py` and `ranker.py` require 1 command line argument.
 
 ```
-1. scraper.py
+1. scraper.py LINKEDIN_URL
 2. formatter.py
-3. ranker.py
+3. ranker.py RANKING_QUERY
 ```
 
 The final ranking of the program can be found under `data/ranking/ranking.txt`. Note: it is a zero-index ranking, so line 1 in the ranking will refer to document 0 in the collection.
@@ -77,7 +77,9 @@ To execute the program with the provided frontend:
 - Navigate into `frontend_flask/`
 - Run `flask run` or `python -m flask run`
 - Navigate to http://127.0.0.1:5000/ on a browser
-- Enter a query in the text box and hit search
+- Enter a query in the corresponding text boxes and hit scrape, then rank.
+
+Note: rank will rank the data cached in `data/formatted/documents.txt`. If the scraping process is not completed, the ranked data may be cached data from the previous scrape. The status of the scraping process is visible in the terminal. 
 
 # Evaluation:
 To evaluate the accuracy and effectiveness of our program, a sample dataset of 25 job postings was scraped and formatted. Additional details and the results of the evaluation can be found in `evaluation.md`.
@@ -88,4 +90,3 @@ Andrew28:
 - `formatter.py`
 
 Sujaypn2:
-`

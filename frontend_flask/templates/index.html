@@ -34,7 +34,6 @@
 
       function sendPOST_scrape() {
         let scraping_query = { scraping_query: $("#scraping_query").val() }
-
         $.post("/scrape")
       }
       </script>
@@ -95,7 +94,7 @@
       <h1>LinkedIn Job Posting Ranker</h1>
       <div class="rankRow">
         Scraping Query: 
-        <input type="text" class="scrape_searchbar" id="scraping_query" name="scraping_query" placeholder="Example: Software Engineer">
+        <input type="text" class="scrape_searchbar" id="scraping_query" name="scraping_query" placeholder="Example: https://www.linkedin.com/jobs/search?keywords=software%20engineering&location=&geoId=&trk=homepage-jobseeker_jobs-search-bar_search-submit&position=1&pageNum=0">
         <button onclick="sendPOST_scrape();" class="rankBtn">Scrape</button>
       </div>
       <br>
