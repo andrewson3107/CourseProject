@@ -9,9 +9,21 @@
     <title>CS410: Job Postings Ranker</title>
     <script>
     function sendPOST() {
-      $.post("/rank")
+      let query = { query: $("#query").val() }
+
+      $.post("/rank", query)
       .done(function (data) {
-        $("#content").html(`<hr><h3>Result</h3><pre>${JSON.stringify(data, null, 2)}</pre>`);
+        // $("#content").html(`<hr><h3>Result</h3><pre>${JSON.stringify(data, null, 2)}</pre>`);
+        const ranking = data['ranking']
+        for (var i = 0; i < ranking.length; i++) {
+          for (var key in ranking[i]) {
+            var row = $('<tr/>');
+            var name = key;
+            var link = ranking[i][key];
+            // console.log(name, link);
+            row.append($('<td/>').html(name));
+          }
+        }
       })
       .fail(function (data) {
         $("#content").html(`<hr><h3>Error - ${data.status}</h3><pre>${JSON.stringify(data, null, 2)}</pre>`);
@@ -28,14 +40,15 @@
       <div class="form-group row">
         <label for="query" class="col-sm-2 col-form-label">Query:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="query" name="query" placeholder="Experience with SQL databases">
+          <input type="text" class="form-control" id="query" name="query" placeholder="Enter query here. Example: Experience with SQL databases">
         </div>
       </div>
 
-      <button onclick="sendPOST();" class="btn btn-secondary">Rank!</button>
+      <button onclick="sendPOST();" class="btn btn-secondary">Rank</button>
 
       <div id="content">
       </div>
+      <table id="table" align="center" border="1px"></table>
     </div>
   </body>
 </html>
