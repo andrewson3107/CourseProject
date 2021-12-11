@@ -19,7 +19,7 @@
           for (var key in ranking[i]) {
             var row = $('<tr/>');
             var name = key;
-            var link = ranking[i][key];
+            var link = "<a href=" + ranking[i][key] + ">Link</a>";
             // console.log(name, link);
             row.append($('<td/>').html(i+1));
             row.append($('<td/>').html(name));
