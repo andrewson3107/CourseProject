@@ -3,6 +3,8 @@
 # Overview
 Our project is an application that allows the user to scrape job postings from LinkedIn and rank the postings based on a search query. This can be used to narrow down more specifics based on the text of a job description or the qualifications needed for the job. For this assignment, we used job postings related to software engineering, but any type of job can be used. Additionally, if you would like to, `scraper.py` is the only file that needs to be modified. By creating additional `scraper.py` files for different websites, one can utilize this program for any job postings site. Here is a [link](https://youtu.be/1sN0UW0bUW0) for the video presentation.
 
+Link: https://youtu.be/1sN0UW0bUW0
+
 
 # Backend Implementation:
 `scraper.py`
