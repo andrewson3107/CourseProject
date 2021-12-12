@@ -1,7 +1,7 @@
 # **CS410 Final Project: Job Postings Scraper and Ranker**
 
 # Overview
-Our project is an application that allows the user to scrape job postings from LinkedIn and rank the postings based on a search query. This can be used to narrow down more specifics based on the text of a job description or the qualifications needed for the job. 
+Our project is an application that allows the user to scrape job postings from LinkedIn and rank the postings based on a search query. This can be used to narrow down more specifics based on the text of a job description or the qualifications needed for the job. For this assignment, we used job postings related to software engineering, but any type of job can be used. Additionally, if you would like to, `scraper.py` is the only file that needs to be modified. By creating additional `scraper.py` files for different websites, one can utilize this program for any job postings site. 
 
 
 # Backend Implementation:
@@ -12,7 +12,7 @@ Scrapes a variable number of job postings from a LinkedIn job posting page. Any 
 There are two components to the scraper. The first utilizes Selenium to click each seperate job in the scrolling sidebar. The second utilizes BeautifulSoup4 to scrape the text from each seperate job posting. 
 
 `scraper.py` outputs two text files:
-- `application_links.txt` which contains the title of each job and a link to that specific job posting. Located in `data/raw/`
+- `application_links.txt` which contains the title of each job and a link to that specific job posting. Located in `data/formatted/`
 - `scraped_text.txt` which contains the raw text of each job posting. This data may vary based on job posting but typically includes basic job info, qualifications, and requirements.
 
 `formatter.py`
@@ -26,7 +26,7 @@ Formats the raw data outputted from `scraper.py` with the following criteria:
 
 `ranker.py`
 
-Defines a function accepts a list of documents and a query that returns a sorted list of indexes of the documents based on the ranking. Using that function, ranks the formatted documents in `data/formatted/documents.txt` based off a query term and outputs the sorted list of indexes. Using the raw list of application links, the ranked list of application links is created using the sorted list of indexes at `data/ranked/ranked_application_links.txt`.
+Defines a function accepts a list of documents and a query that returns a sorted list of indexes of the documents based on the ranking. Using that function, ranks the formatted documents in `data/formatted/documents.txt` based off a query term and outputs the sorted list of indexes. Using the raw list of application links, the ranked list of application links is created using the sorted list of indexes at `data/ranked/links.txt`.
 
 # Frontend Implementation:
 The frontend for this application is written with Flask. All of the files related to the frontend can be found in `frontend_flask/`.
