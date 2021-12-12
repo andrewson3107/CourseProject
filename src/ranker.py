@@ -24,7 +24,7 @@ def rank_documents(documents, query):
 
 def read_links():
     links = []
-    f = open('../data/raw/application_links.txt', 'r', encoding='utf-8')
+    f = open('../data/formatted/application_links.txt', 'r', encoding='utf-8')
 
     for line in f.readlines():
         links.append(line)

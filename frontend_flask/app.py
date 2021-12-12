@@ -29,4 +29,4 @@ def scrape():
     os.system(f"py ../src/scraper.py {scraping_query}")
     os.system(f"py ../src/formatter.py")
 
-    return 200
+    return {}, 200

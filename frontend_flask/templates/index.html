@@ -13,6 +13,7 @@
 
         $.post("/rank", query)
         .done(function (data) {
+          $("#table tbody tr").remove(); 
           const ranking = data['ranking']
           for (var i = 0; i < ranking.length; i++) {
             for (var key in ranking[i]) {
@@ -34,7 +35,7 @@
 
       function sendPOST_scrape() {
         let scraping_query = { scraping_query: $("#scraping_query").val() }
-        $.post("/scrape")
+        $.post("/scrape", scraping_query)
       }
       </script>
     <style>

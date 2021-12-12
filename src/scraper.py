@@ -41,7 +41,13 @@ def scrape_posting(wd, url):
 	urls.append(url)
 
 # Crawls through each posting on the sidebar of the job postings page.
-def crawl_sidebar(wd):
+def crawl_sidebar(wd, url):
+	wd.get(url)
+	time.sleep(3)
+	if "authwall" in wd.current_url:
+		crawl_sidebar(wd, url)
+		return
+
 	html = wd.execute_script('return document.body.innerHTML')
 	bs = BeautifulSoup(html, 'html.parser')
 
@@ -65,10 +71,9 @@ def main():
 	# website_url = "https://www.linkedin.com/jobs/search?keywords=software%20engineering&location=&geoId=&trk=homepage-jobseeker_jobs-search-bar_search-submit&position=1&pageNum=0"
 	website_url = sys.argv[1]
 	wd = webdriver.Chrome(executable_path='../Drivers/chromedriver.exe')
-	wd.get(website_url)
 
-	crawl_sidebar(wd)
-	# write_to_file()
+	crawl_sidebar(wd, website_url)
+	write_to_file()
 	wd.close()
 
 if __name__ == "__main__":
